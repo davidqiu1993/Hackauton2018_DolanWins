@@ -16,7 +16,7 @@ import numpy as np
 import pdb
 
 
-def proc_data(fname_in, fname_out_info, fname_out_env, fname_out_drv):
+def proc_data(fname_in, fname_out_info, fname_out_env, fname_out_drv, fname_out_char):
   """
   Process the data.
 
@@ -24,6 +24,7 @@ def proc_data(fname_in, fname_out_info, fname_out_env, fname_out_drv):
   @param fname_out_info The info data file name.
   @param fname_out_env The environment data file name.
   @param fname_out_drv The driver data file name.
+  @param fname_out_char The trip characteristic data file name.
   @return N The number of items processed.
   """
 
@@ -50,6 +51,7 @@ def main():
   fname_out_info = '' # TODO: output file name
   fname_out_env = '' # TODO: output file name
   fname_out_drv = '' # TODO: output file name
+  fname_out_char = '' # TODO: output file name
 
   N = proc_data(fname_in, fname_out_info, fname_out_env, fname_out_drv)
 
@@ -57,6 +59,7 @@ def main():
   print('processed info data file saved (file: %s)' % (fname_out_info))
   print('processed environment data file saved (file: %s)' % (fname_out_env))
   print('processed driver data file saved (file: %s)' % (fname_out_drv))
+  print('processed trip characteristic data file saved (file: %s)' % (fname_out_char))
 
 
 if __name__ == '__main__':
