@@ -27,6 +27,17 @@ def proc_data(fname_in, fname_out):
 
   N = 0
 
+  fields_info = [('rawdata_id', 1, 'id'), 
+                 ('vehicle_id', 2, 'id'), 
+                 ('driver_id', 3, 'id'), 
+                 ('extract_start_date', 4, 'date')]
+  
+  fields_env = [('totaldistance', 5, 'scalar'),
+                ('weight', 6, 'scalar'),
+                ('weight_calculation_type', 7, 'class')] # TODO: fill all the fields
+  
+  fields_drv = [('overrpmtime', 11, 'scalar')] # TODO: fill all the fields
+
   # TODO: implementation
 
   return N
