@@ -16,12 +16,14 @@ import numpy as np
 import pdb
 
 
-def proc_data(fname_in, fname_out):
+def proc_data(fname_in, fname_out_info, fname_out_env, fname_out_drv):
   """
   Process the data.
 
   @param fname_in The input file name.
-  @param fname_out The output file name.
+  @param fname_out_info The info data file name.
+  @param fname_out_env The environment data file name.
+  @param fname_out_drv The driver data file name.
   @return N The number of items processed.
   """
 
@@ -45,12 +47,16 @@ def proc_data(fname_in, fname_out):
 
 def main():
   fname_in = '../data/driver_behavior.csv'
-  fname_out = '' # TODO: output file name
+  fname_out_info = '' # TODO: output file name
+  fname_out_env = '' # TODO: output file name
+  fname_out_drv = '' # TODO: output file name
 
-  N = proc_data(fname_in, fname_out)
+  N = proc_data(fname_in, fname_out_info, fname_out_env, fname_out_drv)
 
   print('data has been processed (N=%d)' % (N))
-  print('processed data file saved (file: %s)' % (fname_out))
+  print('processed info data file saved (file: %s)' % (fname_out_info))
+  print('processed environment data file saved (file: %s)' % (fname_out_env))
+  print('processed driver data file saved (file: %s)' % (fname_out_drv))
 
 
 if __name__ == '__main__':
