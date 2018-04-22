@@ -19,9 +19,7 @@ import matplotlib.pyplot as plt
 import pdb
 
 
-def main():
-  fname_train = '../data/value_model_train.log'
-
+def plot_train(fname_train):
   loss_curve = []
   with open(fname_train, 'r') as f:
     while True:
@@ -32,9 +30,21 @@ def main():
         break
 
   plt.plot([epoch for epoch in range(len(loss_curve))], loss_curve)
-  #plt.plot(loss_curve)
   plt.ylabel('loss')
   plt.xlabel('epoch')
+  plt.ylim((0, 1))
+
+
+def main():
+  fname_train_value = '../data/value_model_train.log'
+  fname_train_behavior = '../data/behavior_model_train.log'
+
+  plt.figure(1)
+  plot_train(fname_train_value)
+  
+  plt.figure(2)
+  plot_train(fname_train_behavior)
+
   plt.show()
 
 

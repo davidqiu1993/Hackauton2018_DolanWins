@@ -1,8 +1,8 @@
 #!/usr/biny/env python
 
 """
-train_value_model.py
-Train the value model as environmental baseline.
+train_behavior_model.py
+Train the behavior model as a state-action value approximation.
 """
 
 __version__     = "0.0.1"
@@ -75,11 +75,11 @@ def main():
   M_drv = np.shape(drv)[1]
   M_chart = np.shape(chart)[1]
 
-  fname_model = '../data/value_model.json'
-  fname_weights = '../data/value_model_weights.h5'
-  fname_train = '../data/value_model_train.log'
+  fname_model = '../data/behavior_model.json'
+  fname_weights = '../data/behavior_model_weights.h5'
+  fname_train = '../data/behavior_model_train.log'
 
-  input_dim = M_env
+  input_dim = M_env + M_drv
   output_dim = M_chart
   model = build_model(input_dim, output_dim, fname_model)
 
@@ -87,7 +87,8 @@ def main():
   trainY = []
   for i in range(len(env)):
     if not (np.isnan(env[i]).any() or np.isnan(drv[i]).any() or np.isnan(chart[i]).any()):
-      trainX.append(env[i])
+      x = np.concatenate((env[i], drv[i]))
+      trainX.append(x)
       trainY.append(chart[i])
   trainX = np.array(trainX)
   trainY = np.array(trainY)
