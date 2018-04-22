@@ -62,7 +62,7 @@ def calc_adv(fname_info, fname_env, fname_chart, fname_drv, fname_adv_trip, fnam
     driverId = info[i][2]
     if driverId not in adv_drv_dict:
       adv_drv_dict[driverId] = []
-    adv_drv_dict[driverId].append(chart[i][9])
+    adv_drv_dict[driverId].append(adv_trip[i][9])
 
   # calculate the driver advantages
   for driverId in adv_drv_dict:
