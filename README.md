@@ -2,6 +2,18 @@
 
 Adapted Performance Assessment For Drivers Through Behavioral Advantage.
 
+Reference:
+
+```
+@article{qiu2018adaptive,
+  title={Adaptive Performance Assessment For Drivers Through Behavioral Advantage},
+  author={Qiu, Dicong and Paga, Karthik},
+  journal={arXiv preprint arXiv:1804.08219},
+  year={2018},
+  month={apr}
+}
+```
+
 
 ## Abstract
 
